@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Auction Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <h1>🎨 Art Auction</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#auctions">Auctions</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="home" class="hero">
+            <h2>Welcome to Art Auction</h2>
+            <p>Discover, bid, and collect exquisite art from verified artists worldwide.</p>
+            <p><strong>Currently on Auction:</strong> <span id="artwork-count">0</span> artwork(s)</p>
+            <button onclick="scrollToSection('auctions')">Explore Auctions</button>
+        </section>
+
+        <!-- Auctions Section -->
+        <section id="auctions" class="section">
+            <h2>Ongoing Art Auctions</h2>
+            <p><strong>Currently on Auction:</strong> <span id="auction-artwork-count">0</span> artwork(s)</p>
+            <div id="auction-gallery" class="auction-gallery">
+                <!-- Auction Item 1 -->
+                <div class="auction-item">
+                    <img src="art1.jpg" alt="Artwork 1">
+                    <div class="auction-details">
+                        <h3>Abstract Dawn</h3>
+                        <p><strong>Starting Bid:</strong> $500</p>
+                        <p><strong>Artist:</strong> Sarah Lee</p>
+                        <button>Place Bid</button>
+                    </div>
+                </div>
+
+                <!-- Auction Item 2 -->
+                <div class="auction-item">
+                    <img src="art2.jpg" alt="Artwork 2">
+                    <div class="auction-details">
+                        <h3>Serene Forest</h3>
+                        <p><strong>Starting Bid:</strong> $800</p>
+                        <p><strong>Artist:</strong> Mark Brown</p>
+                        <button>Place Bid</button>
+                    </div>
+                </div>
+
+                <!-- Auction Item 3 -->
+                <div class="auction-item">
+                    <img src="art3.jpg" alt="Artwork 3">
+                    <div class="auction-details">
+                        <h3>Golden Hour</h3>
+                        <p><strong>Starting Bid:</strong> $1,200</p>
+                        <p><strong>Artist:</strong> Emily Carter</p>
+                        <button>Place Bid</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Art Auction Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>
