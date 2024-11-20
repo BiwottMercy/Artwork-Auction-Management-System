@@ -1,0 +1,12 @@
+create database Auctions;
+use Auctions;
+create table auction_items(Item_ID VARCHAR(100),Item_name VARCHAR(100),Item_description VARCHAR(200),Starting_price float(50),Artist_ID VARCHAR(100),primary key(Item_ID));
+create table Auct1on(Auction_ID VARCHAR(100),Item_ID VARCHAR(200),Start_time float(50), End_time float(50),Highest_bid float(50), Status VARCHAR(100),primary key(Auction_ID), FOREIGN KEY (Item_ID) REFERENCES Items);
+SHOW tables;
+create table Artists(Artist_ID VARCHAR(100),Artist_name VARCHAR(200),Item_ID VARCHAR(100),Cert_code int(50),Email VARCHAR(100),PRIMARY KEY(Artist_ID),FOREIGN KEY (Item_ID) REFERENCES Items(Item_ID));
+show tables;
+desc Artists;
+create table Bids(Bid_ID VARCHAR(100),Item_ID VARCHAR(100), Artist_ID VARCHAR(100),Bidder_name VARCHAR(200), Timestamp TIME(6), PRIMARY KEY(Bid_ID), FOREIGN KEY(Item_ID) REFERENCES Items(Item_ID),FOREIGN KEY(Artist_ID) REFERENCES Artists(Artist_ID));
+create table Bidders(Bidder_ID VARCHAR(200),Bidder_name VARCHAR(200),Item_ID VARCHAR(100), Email VARCHAR(100), Transaction_ID VARCHAR (100), PRIMARY KEY(Bidder_ID),FOREIGN KEY(Item_ID) REFERENCES Items(Item_ID));
+create table Transactions(Transaction_ID VARCHAR(100),Bidder_ID VARCHAR(200),Total_Amount decimal(65),Cost decimal(65),Item_ID VARCHAR(200),Payment_status VARCHAR(100),PRIMARY KEY(Transaction_ID),FOREIGN KEY(Bidder_ID) REFERENCES Bidder(Bidder_ID), FOREIGN KEY(Item_ID) REFERENCES Items(Item_ID));
+create table Transactions(Transaction_ID VARCHAR(100),Bidder_ID VARCHAR(200),Total_Amount decimal(65),Cost decimal(65),Item_ID VARCHAR(200),Payment_status VARCHAR(100),PRIMARY KEY(Transaction_ID),FOREIGN KEY(Bidder_ID) REFERENCES Bidders(Bidder_ID), FOREIGN KEY(Item_ID) REFERENCES Items(Item_ID));
